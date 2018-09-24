@@ -44,6 +44,26 @@
                       </FormattedString>
                  </Label.FormattedText>
             </Label>
+            <!-- Span  Gestures Bug-->
+            <Label>
+                <Label.FontFamily>
+                    <OnPlatform iOS="HelveticaNeue-Light" 
+                                Android="sans-serif-light"/>
+                </Label.FontFamily>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Sometimes you want a span to be tappable, like a phone number or URL: " />
+                        <Span Text="{Binding Url, Mode=OneWay}" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                            Command="{Binding TapCommand, Mode=OneWay}"
+                                            CommandParameter="https://www.xamarin.com"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
             <!-- OnPlatform / OnIdiom  Markup Extensions -->
             <Label Text="OnPlatform/OnIdiom Markup Extensions" class="featureHeader" Margin="0,20,0,10"/>
